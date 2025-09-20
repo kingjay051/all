@@ -22,17 +22,17 @@ spam_chats = []
 
 @kntl.on(events.NewMessage(pattern="^/start$"))
 async def help(event):
-  helptext = "**Halo 👋🏻!\n\nKenalin Nih, Gua Bot Tag All Yang Di Rancang Sama @ANHEAVS_OFC Dengan Berbasis Python.\n\nGua Siap Membantu Lu Dengan Mention Semua Anggota Di Group Anda**"
+  helptext = "**Halo 👋🏻!\n\nKenalin Nih, Gua Bot Tag All Yang Di Rancang Sama @justeris Dengan Berbasis Python.\n\nGua Siap Membantu Lu Dengan Mention Semua Anggota Di Group Anda**"
   await event.reply(
     helptext,
     link_preview=False,
     buttons=(
       [
-        Button.url('Developer', 't.me/ANHEAVS_OFC'),
+        Button.url('Developer', 't.me/justeris'),
       ],
       [
-        Button.url('Support', 't.me/DINOPUTIH_Y'),
-        Button.url('Channel', 't.me/ANHEAVS'),
+        Button.url('Support', 't.me/justeris'),
+        Button.url('Channel', 't.me/justeris'),
       ],
     )
   )
@@ -63,10 +63,10 @@ async def mentionall(event):
     ):
       is_admin = True
   if not is_admin:
-    return await event.respond("**Lu Bukan Admin Ngentod Ngapain Mau Tag All**")
+    return await event.respond("**Lu Bukan Admin Bego Ngapain Mau Tag All**")
   
   if event.pattern_match.group(1) and event.is_reply:
-    return await event.respond("**Minimal Kasih Text/Pesan Lah Kontol!**")
+    return await event.respond("**Minimal Kasih Text/Pesan Lah Bego!**")
   elif event.pattern_match.group(1):
     mode = "teks_on_tempel"
     msg = event.pattern_match.group(1)
@@ -74,7 +74,7 @@ async def mentionall(event):
     mode = "teks_on_balas"
     msg = await event.get_reply_message()
     if msg == None:
-        return await event.respond("**Si Tolol Di Suruh Kasih Text/Pesan Batu Bet Kalo Di Bilangin**")
+        return await event.respond("**Si Dongo Di Suruh Kasih Text/Pesan Batu Bet Kalo Di Bilangin**")
   else:
     return await event.respond("**Si Tolol Di Suruh Kasih Text/Pesan Batu Bet Kalo Di Bilangin**")
   
